@@ -1,0 +1,7 @@
+require("wayne.plugins-setup")
+require("wayne.core.options")
+require("wayne.core.keymaps")
+require("wayne.core.colorscheme")
+require("wayne.plugins.comment")
+require("wayne.plugins.nvim-tree")
+require("wayne.plugins.lualine")
