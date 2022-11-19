@@ -36,3 +36,10 @@ km.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- nvim-tree
 km.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- telescope
+km.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
+km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find text that cursor is on
+km.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+km.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
