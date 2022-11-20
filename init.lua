@@ -14,3 +14,5 @@ require("wayne.plugins.lsp.null-ls") -- formatters and linters
 require("wayne.plugins.gitsigns") -- formatters and linters
 require("wayne.plugins.autopairs") -- auto parens, brackets, tags
 require("wayne.plugins.treesitter") -- syntax highlighting
+require("wayne.plugins.nvim-dap") -- debugger integration
+--require("wayne.plugins.nvim-gdb") -- gdb debugger integration
