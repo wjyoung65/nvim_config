@@ -38,7 +38,7 @@ return packer.startup(function(use)
   -- Use ctl-hjkl to move between splits
   -- Possible tmux integration
   use("christoomey/vim-tmux-navigator")
-  
+
   -- maximize and restore current split window
   -- keymaps.lua was modified to take advantage of this module
   use("szw/vim-maximizer")
@@ -74,7 +74,7 @@ return packer.startup(function(use)
   use("rafamadriz/friendly-snippets") -- useful snippets
 
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-  
+
   -- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
