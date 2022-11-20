@@ -4,8 +4,8 @@ if not status then
   return
 end
 
-local status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status then
+local cmp_status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not cmp_status then
   print("cmp_nvim_lsp not found")
   return
 end
@@ -13,7 +13,7 @@ end
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds for available lsp servers
-local on_attach = function(client, bufner)
+local on_attach = function(client, bufnr)
   -- keybind options
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
@@ -35,6 +35,7 @@ end
 -- used to enable autocompletion (assign to every lsp server config)
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
+-- Note this did not play well with my remote work setup -- wjy
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
 local signs = { Error = " ", Warn = " ", Hint = "ﴞ ", Info = " " }

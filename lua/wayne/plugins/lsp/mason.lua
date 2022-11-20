@@ -44,7 +44,7 @@ mason_null_ls.setup({
   ensure_installed = {
     "prettier",
     "cpplint", -- C / C++
-    "stylua", -- formatter for lua code
+    --"stylua", -- formatter for lua code
     "pylint", -- python
     "sql_formatter", -- sql
   }
