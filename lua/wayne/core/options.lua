@@ -42,3 +42,6 @@ opt.splitbelow = true
 -- a text containing a dash like "hello-world" will
 -- delete both hello and world, including the dash
 opt.iskeyword:append("-")
+
+-- mouse: disable for all modes (default is mouse=nvi)
+opt.mouse = ""

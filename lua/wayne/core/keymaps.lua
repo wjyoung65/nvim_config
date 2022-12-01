@@ -10,7 +10,8 @@ km.set("n", "<leader>nh", ":nohl<CR>")
 
 -- when in normal mode, pressing x to delete a character will not
 -- also copy it into the clipboard
-km.set("n", "x", '"_x')
+-- km.set("n", "x", '"_x')
+-- not sure I like this one b/c it breaks xp to switch two characters
 
 -- decrement and increment numbers with leader and plus/minus keys
 km.set("n", "<leader>+", "<C-a>")

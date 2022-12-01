@@ -28,7 +28,7 @@ null_ls.setup({
         -- Need to override args because extra_args does not work.
         -- Be sure to put filename last. Also, do not use quotes
         -- for the filter option.
-        args = { "--filter=-whitespace/parens,-legal", "$FILENAME"},
+        args = { "--filter=-whitespace/parens,-whitespace/braces,-legal", "$FILENAME"},
         diagnostic_config = diag_config,
     }),
     diagnostics.pylint,
