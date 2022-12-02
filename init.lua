@@ -1,3 +1,7 @@
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 require("wayne.plugins-setup")
 require("wayne.core.options")
 require("wayne.core.keymaps")
