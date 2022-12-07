@@ -22,7 +22,7 @@ treesitter.setup({
     "json",
     "perl",
     "python",
-    "sql",
+--    "sql",
     "bash",
     "lua",
     "vim",
