@@ -9,7 +9,7 @@ vim.g.loaded_netrwPlugin = 1
 
 nvimtree.setup({
   view = {
-    adaptive_size = true,
+    adaptive_size = false,
     width = 40,
   },
   renderer = {

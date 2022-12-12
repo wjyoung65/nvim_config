@@ -28,14 +28,14 @@ mason_lspconfig.setup({
 --    "asm_lsp", -- GAS/NASM assembly
 --    "bashls", -- bash
     "clangd", -- C/C++
-    "cmake", -- cmake
+--    "cmake", -- cmake
  --   "dockerls", -- docker
  --   "jsonls", -- json
     "sumneko_lua", -- lua
     "zk", ---markdown
  --   "perlnavigator", -- perl
-    "jedi_language_server", -- python
-    "rust_analyzer", -- rust
+--    "jedi_language_server", -- python
+--    "rust_analyzer", -- rust
  --   "sqlls", -- sql
   }
 })
