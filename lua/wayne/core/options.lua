@@ -45,3 +45,15 @@ opt.splitbelow = true
 
 -- mouse: disable for all modes (default is mouse=nvi)
 opt.mouse = ""
+
+-- From TJ or The Primeagen
+-- highlight yanked text momentarily to confirm what was yanked
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = vim.api.nvim_create_augroup('highlight_yank', {}),
+  desc = 'Hightlight selection on yank',
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 150 }
+  end,
+})
+

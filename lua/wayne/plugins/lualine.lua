@@ -13,7 +13,7 @@ local new_colors = {
   black = "#000000",
 }
 
--- change nightlfy theme colors
+-- change nightfly theme colors
 lualine_nightfly.normal.a.bg = new_colors.blue
 lualine_nightfly.insert.a.bg = new_colors.green
 lualine_nightfly.visual.a.bg = new_colors.violet
@@ -28,6 +28,7 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
   options = {
+    icons_enabled = true,
     theme = lualine_nightfly,
   },
 })

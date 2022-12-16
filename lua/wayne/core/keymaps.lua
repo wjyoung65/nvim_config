@@ -14,8 +14,8 @@ km.set("n", "<leader>nh", ":nohl<CR>")
 -- not sure I like this one b/c it breaks xp to switch two characters
 
 -- decrement and increment numbers with leader and plus/minus keys
-km.set("n", "<leader>+", "<C-a>")
-km.set("n", "<leader>-", "<C-x>")
+--km.set("n", "<leader>+", "<C-a>")
+--km.set("n", "<leader>-", "<C-x>")
 
 -- window splitting, from Josean Martinez
 
@@ -44,3 +44,9 @@ km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
 km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find text that cursor is on
 km.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 km.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+
+-- ^u and ^d with auto recenter, from The Primeagen
+km.set("n", "<C-d>", "<C-d>zz", {noremap = true})
+km.set("n", "<C-u>", "<C-u>zz", {noremap = true})
+km.set("n", "n", "nzzzv", {noremap = true})
+km.set("n", "N", "Nzzzv", {noremap = true})

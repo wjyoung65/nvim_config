@@ -23,6 +23,7 @@ vim.cmd([[
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
+  print("packer not installed")
   return
 end
 
@@ -30,8 +31,6 @@ end
 return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
-
-  use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("bluz71/vim-nightfly-guicolors") -- josean's preferred colorscheme
 
@@ -61,7 +60,11 @@ return packer.startup(function(use)
 
   -- fuzzy finding with telescope
   use({"nvim-telescope/telescope-fzf-native.nvim", run = "make"}) -- dependency for better sorting performance, runs make after installing the plugin
-  use({"nvim-telescope/telescope.nvim", branch = "0.1.x"}) -- fuzzy finder
+  use {
+    "nvim-telescope/telescope.nvim",  -- fuzzy finder
+    tag = "0.1.x",
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
   -- autocompletion
   use("hrsh7th/nvim-cmp") -- completion plugin
@@ -76,11 +79,13 @@ return packer.startup(function(use)
   use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
   -- managing & installing lsp servers, linters & formatters
-  use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-  use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+  use {
+    "williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
+    "williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
+    "neovim/nvim-lspconfig", -- easily configure language servers
+  }
 
   -- configuring lsp servers, linters, and formatters
-  use("neovim/nvim-lspconfig") -- easily configure language servers
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
 

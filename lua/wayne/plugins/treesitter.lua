@@ -31,4 +31,5 @@ treesitter.setup({
   },
   -- auto install above language parsers
   auto_install = true,
+  sync_install = false, -- install parsers synchronously
 })
