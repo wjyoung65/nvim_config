@@ -39,11 +39,28 @@ km.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 km.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- telescope
-km.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
-km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find text that cursor is on
-km.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-km.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+-- Josean's keymaps
+-- km.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
+-- km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>")
+-- km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find text that cursor is on
+-- km.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
+-- km.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
+-- TJ's keymaps
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+  -- You can pass additional configuration to telescope to change theme, layout, etc.
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = '[/] Fuzzily search in current buffer]' })
+
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
+vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- ^u and ^d with auto recenter, from The Primeagen
 km.set("n", "<C-d>", "<C-d>zz", {noremap = true})

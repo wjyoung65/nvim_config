@@ -1,11 +1,13 @@
 local telescope_setup, telescope = pcall(require, "telescope")
 if not telescope_setup then
+  print("telescope could not be setup")
   return
 end
 
 -- for telescope custom keymaps
 local actions_setup, actions = pcall(require, "telescope.actions")
 if not actions_setup then
+  print("telescope.actions could not be setup")
   return
 end
 

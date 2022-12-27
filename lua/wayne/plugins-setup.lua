@@ -88,6 +88,7 @@ return packer.startup(function(use)
   -- configuring lsp servers, linters, and formatters
   use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
   use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
+  use("j-hui/fidget.nvim") --  LSP status indicator
 
   -- formatting & linting
   use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
@@ -101,13 +102,21 @@ return packer.startup(function(use)
       ts_update()
     end,
   })
+  use { -- Additional text objects via treesitter
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    after = 'nvim-treesitter',                                                                                                                                       
+  }
 
   -- auto closing
   use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
   use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
   -- git integrations
-  use("lewis6991/gitsigns.nvim") -- show line mods on left side
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'lewis6991/gitsigns.nvim'  -- show line mods on left side
+
+  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
   -- debugger adapter protocol
   use("mfussenegger/nvim-dap")
@@ -115,7 +124,6 @@ return packer.startup(function(use)
 
   -- gdb integration
 --  use("sakhnik/nvim-gdb")
-
 
   if packer_bootstrap then
     require("packer").sync()

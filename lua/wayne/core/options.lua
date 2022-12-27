@@ -46,6 +46,23 @@ opt.splitbelow = true
 -- mouse: disable for all modes (default is mouse=nvi)
 opt.mouse = ""
 
+-- enable breakindent
+opt.breakindent = true
+
+-- save undo history
+opt.undofile = true
+
+-- decrease update time
+opt.updatetime = 250
+vim.wo.signcolumn = 'yes'
+
+-- better completion experience, according to TJ
+vim.o.completeopt = 'menuone,noselect'
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- From TJ or The Primeagen
 -- highlight yanked text momentarily to confirm what was yanked
 vim.api.nvim_create_autocmd('TextYankPost', {
