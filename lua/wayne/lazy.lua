@@ -13,12 +13,21 @@ vim.opt.rtp:prepend(lazypath)
 
 -- List plugins in this table
 require("lazy").setup({
-	{
-		"bluz71/vim-nightfly-guicolors",
-		priority = 1000, -- load this before all the other start plugins
-		config = function()
-			-- load the colorscheme here:
-			vim.cmd([[colorscheme nightfly]])
-		end,
-	},
+  {import = "wayne.plugins"},
+  {import = "wayne.plugins.lsp"},
+}, {
+  install = {
+    -- Whenever a plugin is loaded, set this color scheme
+    -- Why needed again? I don't really like duplication
+    colorscheme = {"nightfly"},
+  },
+  -- Josean prefers to have Lazy's check and change detection in the status line
+  -- see lualine.lua, lazy.status module, lazy_status.updates
+  checker = {
+    enabled = true,
+    notify = false, -- don't notify with each check
+  },
+  change_detection = {
+    notify = false,
+  }
 })
