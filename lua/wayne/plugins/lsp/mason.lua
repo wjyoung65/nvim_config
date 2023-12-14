@@ -24,9 +24,9 @@ return {
     })
 
     mason_lspconfig.setup({
-      -- list of servers for mason to install
+      -- list of language servers for mason to install
       ensure_installed = {
-        "lua_ls",
+        "pyright", -- static type checker for python
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true, -- not the same as ensure_installed
@@ -36,13 +36,14 @@ return {
       ensure_installed = {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
-        "cpptools",
-        "ansible-language-server",
-        "ansible-lint",
         "isort", -- python formatter
         "black", -- python formatter
         "pylint", -- python linter
---        "eslint_d", -- js linter
+        "ansible-language-server",
+        "ansible-lint",
+        "cpptools",
+        "sonarlint-language-server", -- "empowers you to fix coding issues before they exist"
+        "lua_ls", -- aka lua language server
       },
     })
   end,
