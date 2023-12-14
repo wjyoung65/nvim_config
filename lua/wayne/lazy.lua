@@ -13,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- List plugins in this table
 require("lazy").setup({
+  -- need this table b/c lazy.nvim won't automatically load plugins in nested folders
   {import = "wayne.plugins"},
   {import = "wayne.plugins.lsp"},
 }, {

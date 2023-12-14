@@ -1,13 +1,13 @@
 -- For auto-completion
 return {
   "hrsh7th/nvim-cmp",
-  event = "InsertEnter",
+  event = "InsertEnter", -- lazy load this plugin when we enter insert mode
   dependencies = {
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
-    "L3MON4D3/LuaSnip", -- snippet engine
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "rafamadriz/friendly-snippets", -- useful snippets
+    "hrsh7th/cmp-buffer", -- completion source for cmp: text in buffer
+    "hrsh7th/cmp-path", -- completion source for cmp: file system paths
+    "L3MON4D3/LuaSnip", -- snippet engine to get snippets in autocompletion
+    "saadparwaiz1/cmp_luasnip", -- completion source for autocompletion
+    "rafamadriz/friendly-snippets", -- useful snippets for many different languages
     "onsails/lspkind.nvim", -- vs-code like pictograms
   },
   config = function()
@@ -22,6 +22,7 @@ return {
 
     cmp.setup({
       completion = {
+        -- How the completion menu works, refer to :h completeopt
         completeopt = "menu,menuone,preview,noselect",
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
@@ -29,6 +30,7 @@ return {
           luasnip.lsp_expand(args.body)
         end,
       },
+      -- custom maps to interact with nvim-cmp
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
@@ -38,7 +40,7 @@ return {
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
-      -- sources for autocompletion
+      -- sources for autocompletion, order can be rearranged
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" }, -- snippets

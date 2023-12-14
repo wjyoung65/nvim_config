@@ -1,3 +1,4 @@
+-- This plugin is for fuzzy finding files and strings
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
